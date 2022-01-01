@@ -1,36 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct MyPair  {
+//コピーコンストラクタ
+
+struct MyPair {
   int x;
   string y;
 
+  //constructor
   MyPair() {
-    cout << "初期化無し" << endl;
+    cout << "normal constructor called" << endl;
   }
-
-  MyPair(int x_) {
-    cout << "xのみ初期化" << endl;
-    x = x_;
-  }
-
-  MyPair(int x_,string y_) {
-    cout << "x,yともに初期化" << endl;
-    x = x_;
-    y = y_;
+  
+  MyPair(const MyPair &old) {
+    cout << "copy constructor called" << endl;
+    
+    x = old.x + 1;
+    y = old.y + " new";
   }
 };
 
 int main() {
   MyPair p;
+  p.x = 12345;
+  p.y = "hello";
+  
   cout << "p.x = " << p.x << endl;
   cout << "p.y = " << p.y << endl;
 
-  MyPair q(6789);
+  MyPair q(p);
   cout << "q.x = " << q.x << endl;
   cout << "q.y = " << q.y << endl;
 
-  MyPair r(11111, "good bye");
+  MyPair r = q;
   cout << "r.x = " << r.x << endl;
   cout << "r.y = " << r.y << endl;
- }
+}
