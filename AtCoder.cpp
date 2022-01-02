@@ -2,13 +2,13 @@
 using namespace std;
 
 int main() {
-  function<int(int) > sum = [&](int n) {
-    if(n == 0){
-      return 0;
-    } 
-    int s = sum (n - 1);
-    return s + n;
-  };
-
-  cout << sum(3) << endl;
+  vector<int> v = {2, 1, 3};
+  sort(v.begin(), v.end());
+  do {
+    for(int x : v){
+      cout << x << " ";
+    }
+    cout << endl;
+  }
+  while(next_permutation(v.begin(), v.end()));
 }
