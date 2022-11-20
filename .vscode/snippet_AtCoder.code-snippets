@@ -21,8 +21,52 @@
             "#include <iostream>",
             "using namespace std;",
             "",
-            "int main() {}",
+            "int main() {",
+						"  return 0;",
+						"}"
+
         ],
         "description": ""
     },
+		    "forn": {
+        "prefix": "forab",
+        "body": [
+            "for (int i = $1; i <= $2; i++) {",
+            "",
+            "}",
+        ],
+        "description": ""
+    },
+		    "yes": {
+        "prefix": "yes",
+        "body": [
+            "cout  << \"Yes\" << endl;",
+        ],
+        "description": ""
+    },
+		    "no": {
+        "prefix": "no",
+        "body": [
+            "cout  << \"No\" << endl;",
+        ],
+        "description": ""
+    },
+		    "in1": {
+        "prefix": "in1",
+        "body": [
+            "cin >> ;",
+        ],
+        "description": ""
+    },
+		    "in2": {
+        "prefix": "in2",
+        "body": [
+            "cin >> >> ;",
+        ],
+        "description": ""
+    },
+
+
+
+
 }
