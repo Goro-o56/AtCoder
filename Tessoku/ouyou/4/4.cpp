@@ -9,7 +9,7 @@ int main() {
   //8桁みて、各桁に対して場合分け
   for (int i = 0; i < N.size(); i++){
     int keta;
-    int kurai = (1 << (N.size() - 1 - i));
+    int kurai = (1 << (N.size() - 1 - i)); //今扱う位の話
     if(N[i] == '0') keta = 0;
     if(N[i] == '1') keta = 1;
     Ans += keta * kurai;
