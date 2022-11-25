@@ -82,6 +82,24 @@
         ],
         "description": ""
     },
+            "outst": {
+        "prefix": "outst",
+        "body": [
+            "cout << \"$1\"  << endl;",
+            "        ",
+        ],
+        "description": ""
+    },
+            "outint": {
+        "prefix": "outint",
+        "body": [
+            "cout << $1  << endl;",
+            "        ",
+        ],
+        "description": ""
+    },
+
+
 
 
 

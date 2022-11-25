@@ -8,12 +8,16 @@ int main() {
 
   //8桁みて、各桁に対して場合分け
   for (int i = 0; i < N.size(); i++){
-    int keta;
-    int kurai = (1 << (N.size() - 1 - i)); //今扱う位の話
-    if(N[i] == '0') keta = 0;
-    if(N[i] == '1') keta = 1;
-    Ans += keta * kurai;
+    int k = 0; //keta
+    int kurai = 0;
+    if (N[i] == '0') k = 0;
+    if (N[i] == '1' ) kurai = N.size() - i - 1, k = 1;
+
+
+
+    Ans +=  k* (1 << kurai);
   }
+  
   
   cout << Ans << endl;
 
