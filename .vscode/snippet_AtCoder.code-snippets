@@ -93,7 +93,7 @@
             "outint": {
         "prefix": "outint",
         "body": [
-            "cout << $1  << endl;",
+            "cout << \"\"  << endl;",
             "        ",
         ],
         "description": ""
