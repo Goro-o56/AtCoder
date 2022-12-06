@@ -98,6 +98,18 @@
         ],
         "description": ""
     },
+    "search_binary": {
+        "prefix": "search_binary",
+        "body": [
+            "int Search(int x, int Arr[]) {",
+            "  int pos = lower_bound(Arr + 1, Arr + N, x) -Arr;",
+            "  if (pos <= N && A[pos] == x) return pos;",
+            "  return -1;",
+            "}",
+        ],
+        "description": ""
+    },
+
 
 
 
