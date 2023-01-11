@@ -13,21 +13,23 @@ int main() {
     cin >> L[i] >> R[i] ;
   }  
 
-  //差分を考える
+  for (int t = 1; t <= T; t ++){
+    B[t] = 0;
+  }  
+  //差分を作る
   for (int i = 1; i <= N; i ++){
     B[L[i]] += 1;
     B[R[i]] -= 1;
   }  
 
-  //累積和
+  //累積和をとる
   Ans[0] = B[0];
-  for (int t = 0; t <= T; t ++){
-    Ans[t] = Ans[t-1] + B[t];
+  for (int i = 1 ; i <=  T ;  i ++){
+    Ans[i] = Ans[i-1] + B[i];
   }  
 
   //質問に応える
-  for (int t = 0; t < T; t ++){
-    cout << Ans[t] << endl;  
+  for (int i = 0 ; i < T; i ++){
+    cout << Ans[i] << endl;
   }  
-
 }

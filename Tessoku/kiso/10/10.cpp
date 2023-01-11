@@ -1,40 +1,46 @@
 #include <iostream>
+#include <vector>
 #include <algorithm>
 
 using namespace std;
 
+int N;
+int A[100009];
+int D;
+int L[100009],R[100009];
 
-int N,D;
-int A[100009],L[100009],R[100009];
 int P[100009],Q[100009];
+
 int main() {
   cin >> N;
+  
   for (int i = 1; i <= N; i ++){
     cin >> A[i];
   }  
 
   cin >> D;
-  for (int i = 1; i <= D; i ++){
-    cin >> L[i] >> R[i];
-  }  
 
-  //P[i]を求める
-  P[0] = A[1];
-  for (int i = 1; i <= N; i ++){
-    P[i] = max(P[i-1],A[i]);
-  }  
-
-  //Q[i]を求める
-  Q[N] = A[N];
-  for (int i = N-1; i >=1 ; i --){
-    Q[i] = max(Q[i+1], A[i]);
-  }  
-
-  //それぞれの日について答えを求める
   for (int d = 1; d <= D; d ++){
-    cout << max(P[L[d]-1],Q[R[d] + 1]) << endl;
+    cin >> L[d] >> R[d];
+  }  
+
+  //P[d], Q[d]を求める
+  P[1] = A[1];
+  for (int d = 2; d <= N; d ++){
+    P[d] = max(P[d-1], A[d]);
+  }  
+  Q[N] = A[N];
+  for (int d = N - 1; d >= 1; d --){
+    Q[d] = max(Q[d+1], A[d]);
   }  
 
 
+  //それぞれの日について解答
+  for (int d = 1; d <= D; d ++){
+    cout << max(P[L[d]-1], Q[R[d]+1]) << endl;
+  }  
+  
+
+  
   return 0;
 }

@@ -1,9 +1,12 @@
 #include <iostream>
-using namespace std;
+#include <vector>
+#include <algorithm>
 
+using namespace std;
+int A, B;
 int main() {
-  int A,B;
   cin >> A >> B;
-  cout << A + B << endl;
+  cout << A + B;
+  
   return 0;
 }
