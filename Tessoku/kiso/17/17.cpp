@@ -30,8 +30,9 @@ int main() {
     Answer.push_back(place);
     if(place == 1) break;
 
-    if (dp[place-1] + A[place] == dp[place]) place = place -1;
-    else place = place -2;
+    //部屋の遷移をたどる
+    if(dp[place-1] + A[place] == dp[place]) place -= 1;
+    else place -= 2;
 
   }
 
